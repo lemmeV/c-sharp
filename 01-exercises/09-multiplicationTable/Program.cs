@@ -24,7 +24,7 @@ namespace _09_multiplicationTable
                 for (int j = 1; j <= 9; j++)
                 {
                     int answer = j * i;
-                    string output = fixOutputLength(answer);
+                    string output = FixOutputLength(answer);
                     Console.Write($"{output} | ");
                 }
                 Console.WriteLine("\n-------------------------------------------");
@@ -35,17 +35,20 @@ namespace _09_multiplicationTable
 
         // Helper function to always output an answer of the same length
 
-        static private string fixOutputLength(int answer)
+        static private string FixOutputLength(int answer)
         {
+            // Check the length of the answer
+
             int answerLength = answer.ToString().Length;
 
-            if(answerLength == 1)
-            {
-                return " " + answer;
-            } else
-            {
-                return answer.ToString();
-            }
+            // add a space if the answer length is 1
+       
+            string result = (answerLength == 1) ? " " + answer : answer.ToString();
+
+            // Return the result for printing
+
+            return result;
+            
         }
     }
 }
