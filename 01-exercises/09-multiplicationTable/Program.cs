@@ -23,12 +23,29 @@ namespace _09_multiplicationTable
 
                 for (int j = 1; j <= 9; j++)
                 {
-                    Console.Write($"{ j * i} | ");
+                    int answer = j * i;
+                    string output = fixOutputLength(answer);
+                    Console.Write($"{output} | ");
                 }
                 Console.WriteLine("\n-------------------------------------------");
                 
             }
             Console.ReadLine();
+        }
+
+        // Helper function to always output an answer of the same length
+
+        static private string fixOutputLength(int answer)
+        {
+            int answerLength = answer.ToString().Length;
+
+            if(answerLength == 1)
+            {
+                return " " + answer;
+            } else
+            {
+                return answer.ToString();
+            }
         }
     }
 }
