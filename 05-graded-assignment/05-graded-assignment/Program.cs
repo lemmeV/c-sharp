@@ -4,19 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _04_graded_assignment
+namespace _05_graded_assignment
 {
     class Program
     {
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
-            Console.WriteLine("Taco Palenque");
-            Console.WriteLine("1200 Main ST.");
-            Console.WriteLine("-------------------------------------------");
+
+            Restaurant restaurant = new Restaurant("Taco Palenque", "1200 Main ST.");
 
             string itemSum = null;
-            double subtotal = 0.00;
+            Tab tab = new Tab();
 
             while (itemSum != "-1")
             {
@@ -28,19 +27,15 @@ namespace _04_graded_assignment
                     break;
                 }
 
-                subtotal += double.Parse(itemSum);
+                tab.Add(itemSum);
 
             }
 
-            double gratuity = subtotal * 0.15;
-            double totalSum = subtotal - gratuity;
+            Receipt receipt = new Receipt(tab.subtotal);
 
-            Console.WriteLine($"Subtotal: {subtotal.ToString("0.##")}");
-            Console.WriteLine($"15.00 % Gratuity: €{gratuity.ToString("0.##")}");
-            Console.WriteLine($"Total: €{totalSum.ToString("0.##")}");
+            Console.WriteLine();
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
-
         }
     }
 }
