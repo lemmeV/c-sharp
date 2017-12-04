@@ -17,12 +17,12 @@
 
             var cards = new List<Card>
                             {
-                                new Card("4", Suite.Club, 4, false),
-                                new Card("6", Suite.Heart, 6, false),
-                                new Card("8", Suite.Spade, 8, false),
-                                new Card("J", Suite.Diamond, 10, true),
-                                new Card("4", Suite.Spade, 4, false),
-                                new Card("T", Suite.Heart, 10, true)
+                                new Card(Rank.Four, Suite.Club, 4, false),
+                                new Card(Rank.Six, Suite.Heart, 6, false),
+                                new Card(Rank.Eight, Suite.Spade, 8, false),
+                                new Card(Rank.Jack, Suite.Diamond, 10, true),
+                                new Card(Rank.Four, Suite.Spade, 4, false),
+                                new Card(Rank.Ten, Suite.Heart, 10, true)
                             };
 
             var deck = new Deck(cards);

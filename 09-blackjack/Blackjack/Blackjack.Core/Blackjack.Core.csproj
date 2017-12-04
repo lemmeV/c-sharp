@@ -43,6 +43,8 @@
     <Compile Include="Card.cs" />
     <Compile Include="Deck.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rank.cs" />
+    <Compile Include="RankExtensions.cs" />
     <Compile Include="Suite.cs" />
     <Compile Include="SuiteExtensions.cs" />
   </ItemGroup>
