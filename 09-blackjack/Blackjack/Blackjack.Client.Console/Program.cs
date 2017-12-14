@@ -2,6 +2,10 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
 
     using Blackjack.Core;
 
@@ -12,49 +16,51 @@
 
         public static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the game of Blackjack!");
-            Console.WriteLine();
+            Menu menu = new Menu();
+            menu.DisplayMainMenu();
 
-            var cards = new List<Card>
-                            {
-                                new Card(Rank.Four, Suite.Club, 4, false),
-                                new Card(Rank.Six, Suite.Heart, 6, false),
-                                new Card(Rank.Eight, Suite.Spade, 8, false),
-                                new Card(Rank.Jack, Suite.Diamond, 10, true),
-                                new Card(Rank.Four, Suite.Spade, 4, false),
-                                new Card(Rank.Ten, Suite.Heart, 10, true)
-                            };
 
-            var deck = new Deck(cards);
+                     var cards = new List<Card>
+                                     {
+                                         new Card(Rank.Four, Suite.Club, 4, false),
+                                         new Card(Rank.Six, Suite.Heart, 6, false),
+                                         new Card(Rank.Eight, Suite.Spade, 8, false),
+                                         new Card(Rank.Jack, Suite.Diamond, 10, true),
+                                         new Card(Rank.Four, Suite.Spade, 4, false),
+                                         new Card(Rank.Ten, Suite.Heart, 10, true)
+                                     };
 
-            Console.WriteLine($"You have been dealt: {GetCardDescription(deck.Next())}, {GetCardDescription(deck.Next())}");
-            Console.WriteLine($"House has been dealt: {GetCardDescription(deck.Next())}, { GetCardDescription(deck.Next())}");
-            Console.WriteLine();
+                     var deck = new Deck(cards);
 
-            Console.WriteLine("What do you want to do?");
-            Console.WriteLine("Choose: 1 - To take another card");
-            Console.WriteLine("Choose: 2 - To finish");
-            Console.WriteLine();
-            Console.WriteLine("I choose: 1");
-            Console.WriteLine();
+                     Console.WriteLine($"You have been dealt: {GetCardDescription(deck.Next())}, {GetCardDescription(deck.Next())}");
+                     Console.WriteLine($"House has been dealt: {GetCardDescription(deck.Next())}, { GetCardDescription(deck.Next())}");
+                     Console.WriteLine();
 
-            Console.WriteLine($"You have been dealt: {GetCardDescription(deck.Next())}");
-            Console.WriteLine($"House has been dealt: {GetCardDescription(deck.Next())}");
-            Console.WriteLine();
+                     Console.WriteLine("What do you want to do?");
+                     Console.WriteLine("Choose: 1 - To take another card");
+                     Console.WriteLine("Choose: 2 - To finish");
+                     Console.WriteLine();
+                     Console.WriteLine("I choose: 1");
+                     Console.WriteLine();
 
-            Console.WriteLine("What do you want to do?");
-            Console.WriteLine("Choose: 1 - To take another card");
-            Console.WriteLine("Choose: 2 - To finish");
-            Console.WriteLine();
-            Console.WriteLine("I choose: 2");
-            Console.WriteLine();
+                     Console.WriteLine($"You have been dealt: {GetCardDescription(deck.Next())}");
+                     Console.WriteLine($"House has been dealt: {GetCardDescription(deck.Next())}");
+                     Console.WriteLine();
 
-            Console.WriteLine("You have 14 points vs. house 17 points");
-            Console.WriteLine("House wins!");
+                     Console.WriteLine("What do you want to do?");
+                     Console.WriteLine("Choose: 1 - To take another card");
+                     Console.WriteLine("Choose: 2 - To finish");
+                     Console.WriteLine();
+                     Console.WriteLine("I choose: 2");
+                     Console.WriteLine();
 
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine("Press any key");
+                     Console.WriteLine("You have 14 points vs. house 17 points");
+                     Console.WriteLine("House wins!");
+
+                     Console.WriteLine();
+                     Console.WriteLine();
+                     Console.WriteLine("Press any key");
+
             Console.ReadKey();
         }
 
