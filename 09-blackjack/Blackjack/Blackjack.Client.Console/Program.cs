@@ -19,8 +19,12 @@
             Menu menu = new Menu();
             menu.DisplayMainMenu();
 
+            Card card = new Card();
 
-                     var cards = new List<Card>
+            card.MakeCard();
+
+
+          /*           var cards = new List<Card>
                                      {
                                          new Card(Rank.Four, Suite.Club, 4, false),
                                          new Card(Rank.Six, Suite.Heart, 6, false),
@@ -59,7 +63,7 @@
 
                      Console.WriteLine();
                      Console.WriteLine();
-                     Console.WriteLine("Press any key");
+                     Console.WriteLine("Press any key"); */
 
             Console.ReadKey();
         }

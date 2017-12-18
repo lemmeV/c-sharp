@@ -1,5 +1,7 @@
 ﻿namespace Blackjack.Core
 {
+    using System;
+
     public class Card
     {
         public string Description => $"{_rank.GetShortRank()}{_suite.GetShortName()}";
@@ -12,13 +14,21 @@
 
         private readonly int _points;
 
-        public Card(Rank rank, Suite suite, int points, bool hidden)
+        public Card()
         {
+            Rank rank = new Rank();
             _rank = rank;
+            Suite suite = new Suite();
             _suite = suite;
-            _points = points;
+            /* _points = points;
 
-            this.Hidden = hidden;
-        }        
+             this.Hidden = hidden; */
+        }
+
+        public void MakeCard()
+        {
+            
+        }
+    
     }
 }
